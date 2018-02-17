@@ -1,0 +1,21 @@
+{
+  "name": "lazy-load",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "test": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.5.0",
+    "preact": "^8.2.7"
+  }
+}
