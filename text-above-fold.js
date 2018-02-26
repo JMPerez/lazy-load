@@ -12,8 +12,19 @@ if (window.IntersectionObserver) {
         injectHeader('This text is added using IntersectionObserver');
       }
     });
-  });
+  }, {});
   io.observe(header);
 } else {
   injectHeader('IntersectionObserver not supported');
+  import('intersection-observer').then(() => {
+    injectHeader('Polyfill loaded');
+    var io = new window.IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          injectHeader('This text is added using IntersectionObserver polyfill');
+        }
+      });
+    }, {});
+    io.observe(header);
+  });
 }
