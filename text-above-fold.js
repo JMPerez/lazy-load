@@ -5,6 +5,7 @@ function injectHeader(text) {
   header.appendChild(h1);
 }
 if (window.IntersectionObserver) {
+  injectHeader('IntersectionObserver is supported');
   var io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
